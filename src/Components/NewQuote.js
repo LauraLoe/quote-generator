@@ -16,7 +16,7 @@ class NewQuote extends React.Component {
     this.state = {
       quote: [],
       author: '',
-      color: '',
+      color: randomRGB(),
       fadeTransition: null,
       fadeState: "fade-in"
     };
@@ -42,24 +42,19 @@ class NewQuote extends React.Component {
         author: data[0]['author']
       })
       )
-      // .catch(err => console.error(err));
-
-    this.setState({
-      color: randomRGB()
-    })
   }
 
   handleClick() {
-    // After current quote faded out, fetch
-    // next quote and display
+    this.fetchQuote();
+
     const timeout = setTimeout(() => {
-      this.fetchQuote();
 
       this.setState({
         // Apply additional state to control
         // fading transition
         fadeTransition: null,
-        fadeState: "fade-in"
+        fadeState: "fade-in",
+        color: randomRGB()
       })
 
     }, FADE_DURATION);
