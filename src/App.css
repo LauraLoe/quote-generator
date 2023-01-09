@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(216, 188, 241);
+  border: 8px solid black;
+}
+
+#quote-box {
+  padding: 35px;
+  width: 400px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#text {
+  font-family: Noto;
+  font-size: 32px;
+  text-align: center;
+  transition: opacity 0.3s linear 2s;
+}
+
+#author{
+  text-align: right;
+  padding: 8px;
+  font-style: italic;
+}
+
+#new-quote {
+  padding: 0px 16px;
+  margin-top: 8px;
+  border-radius: 5px;
+  border-style: none;
   color: white;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+#tweet-quote {
+  font-size: 48px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+}
+
+.fade-wrapper {
+  transition: opacity ease-in-out;
+}
+.fade-out {
+  opacity: 0;
+}
+.fade-in {
+  opacity: 1;
 }
